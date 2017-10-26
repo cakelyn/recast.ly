@@ -1,7 +1,10 @@
 class App extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      videos: true,
+      video: true
+    };
   }
 
   render() {
