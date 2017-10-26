@@ -1,6 +1,11 @@
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
 
   render() {
+
     return (
       <div>
         <nav className="navbar">
@@ -10,10 +15,10 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><h5><em>videoPlayer</em> view goes here</h5></div>
+            <VideoPlayer video={this.props.videos[0]}/>
           </div>
           <div className="col-md-5">
-            <VideoList data={this.props.data} />
+            <VideoList videos={this.props.videos}/>
           </div>
         </div>
       </div>
