@@ -2,25 +2,18 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      videos: this.props.videos,
-      video: this.props.videos[0]
+      videos: window.exampleVideoData,
+      video: window.exampleVideoData[0]
     };
   }
 
-  // function
   test (currentVideo) {
     this.setState({
       video: currentVideo
     });
-    // change state of video to video clicked
   }
 
   render() {
-
-    // listen for a click on videoList on a certain video
-    // call a function that changes the state
-    // when the state changes in the function call
-    // set the video being sent into videoPlayer
 
     return (
 
@@ -35,7 +28,7 @@ class App extends React.Component {
             <VideoPlayer video={this.state.video}/>
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.props.videos} test={this.test}/>
+            <VideoList videos={this.state.videos} test={this.test.bind(this)}/>
           </div>
         </div>
       </div>
@@ -43,7 +36,7 @@ class App extends React.Component {
   }
 
 
-};
+}
 
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined
